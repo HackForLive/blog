@@ -1,11 +1,28 @@
 <script>
-    export let name;
+    import Blog from './components/blog/Blog.svelte';
+    import Home from './components/home/Home.svelte';
+    import { Router, Route, Link } from "svelte-navigator";
 </script>
 
-<main>
-    <h1>Hello {name}!</h1>
-    <p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
+<Router>
+  <header>
+    <h1>History</h1>
+
+    <nav>
+      <Link to="/">Home</Link>
+      <Link to="blog">Blog</Link>
+    </nav>
+  </header>
+  <main>
+    <Route path="/">
+      <Home/>
+    </Route>
+
+    <Route path="blog">
+      <Blog/>
+    </Route>
+  </main>
+</Router>
 
 <style>
     main {

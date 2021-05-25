@@ -1,4 +1,5 @@
 import './global.css';
+import './codehilite.css';
 
 import App from './App.svelte';
 
