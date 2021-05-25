@@ -1,6 +1,4 @@
 <script>
-  export let name;
-  // import Nested from './Nested.svelte';
   let htmlContent = ''
 fetch('/build/petshop_cfg.html').then(response => {
   console.dir(response)
