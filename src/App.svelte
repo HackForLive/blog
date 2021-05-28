@@ -5,43 +5,63 @@
 </script>
 
 <Router>
-  <header>
-    <h1>History</h1>
+  <div class="router">
+    <header class="header">
+      <nav class="nav-wrapper">
+        <Link class='link' to="/">Home</Link>
+        <Link class='link' to="blog">Blog</Link>
+      </nav>
+    </header>
+    <main class="main">
+      <Route path="/">
+        <Home/>
+      </Route>
 
-    <nav>
-      <Link to="/">Home</Link>
-      <Link to="blog">Blog</Link>
-    </nav>
-  </header>
-  <main>
-    <Route path="/">
-      <Home/>
-    </Route>
-
-    <Route path="blog">
-      <Blog/>
-    </Route>
-  </main>
+      <Route path="blog">
+        <Blog/>
+      </Route>
+    </main>
+    <footer class="footer">
+      <p>&copy; 2021 Michael Hrabe</p>
+    </footer>
+  </div>
 </Router>
 
 <style>
-    main {
-        text-align: center;
-        padding: 1em;
-        max-width: 240px;
+    .router {
+        width: 100%;
+        height: 100%;
+        /* max-width: 240px; */
         margin: 0 auto;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        grid-template-columns: 1fr;
     }
 
-    h1 {
-        color: #ff3e00;
-        text-transform: uppercase;
-        font-size: 4em;
-        font-weight: 100;
+    .main{
+      overflow-y: auto;
     }
 
-    @media (min-width: 640px) {
-        main {
-            max-width: none;
-        }
+    .header .nav-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
     }
+
+    .footer {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: row;
+      font-size: 1.5rem;
+    }
+
+    .nav-wrapper :global(.link) { 
+      color: black;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-size: 3rem;
+      margin: 0 10px;
+     }
 </style>

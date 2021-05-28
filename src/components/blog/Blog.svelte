@@ -14,13 +14,26 @@ fetch('/build/petshop_cfg.html').then(response => {
 
 <style>
   main {
-      text-align: center;
-      padding: 1em;
-      max-width: 240px;
-      margin: 0 auto;
+      /* text-align: center; */
+      padding: 20x;
+      font-size: 2rem;
+      /* max-width: 240px; */
+      /* margin: 0 auto; */
   }
 
-  /* .content {
-      text-align: center;
-  } */
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+    flex-direction: column;
+  }
+
+  :global(pre) {
+    text-align: left;
+    padding: 10px;
+  }
 </style>

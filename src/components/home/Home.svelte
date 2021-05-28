@@ -18,8 +18,12 @@
     h1 {
         color: #ff3e00;
         text-transform: uppercase;
-        font-size: 4em;
+        font-size: 6rem;
         font-weight: 100;
+    }
+
+    p {
+      font-size: 2rem;
     }
 
     @media (min-width: 640px) {
