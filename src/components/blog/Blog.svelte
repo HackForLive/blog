@@ -14,11 +14,8 @@ fetch('/build/petshop_cfg.html').then(response => {
 
 <style>
   main {
-      /* text-align: center; */
       padding: 20x;
       font-size: 2rem;
-      /* max-width: 240px; */
-      /* margin: 0 auto; */
   }
 
   .content {
