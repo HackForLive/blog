@@ -1,6 +1,6 @@
 <script>
   let htmlContent = ''
-fetch('/build/petshop_cfg.html').then(response => {
+fetch('/build/h1.html').then(response => {
   console.dir(response)
   return response.text();
 }).then(html => {
@@ -20,9 +20,9 @@ fetch('/build/petshop_cfg.html').then(response => {
 
   .content {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    text-align: center;
+    text-align: left;
     width: 100%;
     max-width: 700px;
     margin: auto;
@@ -30,6 +30,21 @@ fetch('/build/petshop_cfg.html').then(response => {
   }
 
   :global(pre) {
+    text-align: left;
+    padding: 10px;
+  }
+
+  :global(li) {
+    text-align: left;
+    padding: 10px;
+  }
+
+  :global(h1) {
+    text-align: left;
+    padding: 10px;
+  }
+
+  :global(h2) {
     text-align: left;
     padding: 10px;
   }

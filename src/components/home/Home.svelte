@@ -1,10 +1,11 @@
 <script>
   export let name = 'EVERYONE';
-  import imgSrc from "../../assets/IMG_20201230_163924566.jpg";
+  import imgSrc from "../../assets/my_photo.jpg";
 </script>
 
 <main>
   <h1>Hello {name}!</h1>
+  <!-- svelte-ignore a11y-img-redundant-alt -->
   <img width="300px" height="400px" src="{imgSrc}" alt='photo'/>
   <p>I'm technology enthusiast and I'm going to share my knowledge with you through my blog posts.</p>
   <p>
