@@ -1,6 +1,7 @@
 import markdown
 from bs4 import BeautifulSoup
 import os
+import json
 
 # markdown.markdownFromFile(input='petshop_cfg.md', output='petshop_cfg.html')
 script_path = os.path.dirname(os.path.realpath(__file__))
@@ -16,12 +17,12 @@ for file in os.listdir(script_path):
             text = f.read()
             html = markdown.markdown(text, extensions=['toc', 'fenced_code', 'codehilite'])
             bsh = BeautifulSoup(html, 'html.parser')
-            h1s.append(bsh.h1)
-            print(bsh.h1)
+            h1s.append({'title': bsh.h1.text, 'date': bsh.time.text, 'file': '/build/' + file.split('.')[0] + '.html'})
+            print(bsh.h1.text)
 
             with open('public/build/' + file.split('.')[0] + '.html', 'w') as f:
                 f.write(html)
+jsonStr = json.dumps(h1s)
 
-with open('public/build/h1.html', 'w') as f:
-    listToStr = ''.join([str(elem) for elem in h1s])
-    f.write(listToStr)
+with open('public/build/blog_data.html', 'w') as f:
+    f.write(jsonStr)

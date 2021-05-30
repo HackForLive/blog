@@ -1,15 +1,24 @@
 <script>
-  let htmlContent = ''
-fetch('/build/h1.html').then(response => {
+// import { link } from "fs";
+// import { dataset_dev } from "svelte/internal";
+
+  let blogData = ''
+fetch('/build/blog_data.html').then(response => {
   console.dir(response)
-  return response.text();
-}).then(html => {
-  htmlContent = html
+  return response.json();
+}).then(json => {
+  blogData = json
 })
 </script>
 
 <main>
-  <div class="content">{@html htmlContent}</div>
+  <div class="content">
+    {#each blogData as data}
+      <p>{data.title}</p>
+      <time>{data.date}</time>
+      <a href={data.file}>click me</a>
+    {/each}
+  </div>
 </main>
 
 <style>

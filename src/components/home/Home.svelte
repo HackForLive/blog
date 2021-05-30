@@ -27,6 +27,7 @@
         text-transform: uppercase;
         font-size: 6rem;
         font-weight: 100;
+        text-align: center;
     }
 
     p {
