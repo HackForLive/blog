@@ -63,6 +63,21 @@ button:not(:disabled):active {
 	background-color: #ddd;
 }
 
+.blog-wrapper {
+  font-size: 2rem;
+  margin: 0 auto;
+  max-width: 1000px;
+  overflow-x: hidden;
+}
+
+.blog-wrapper h1 {
+  text-transform: uppercase;
+}
+
+.codehilite {
+  overflow-x: auto;
+}
+
 button:focus {
 	border-color: #666;
 }

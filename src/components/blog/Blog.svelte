@@ -14,9 +14,11 @@ fetch('/build/blog_data.html').then(response => {
 <main>
   <div class="content">
     {#each blogData as data}
-      <p>{data.title}</p>
-      <time>{data.date}</time>
-      <a href={data.file}>click me</a>
+      <div class="item">
+        <p>{data.title}</p>
+        <time>{data.date}</time>
+        <a href={data.file}>click me</a>
+      </div>
     {/each}
   </div>
 </main>
@@ -38,23 +40,17 @@ fetch('/build/blog_data.html').then(response => {
     flex-direction: column;
   }
 
-  :global(pre) {
-    text-align: left;
-    padding: 10px;
+  .item {
+    width: 70%;
+    border-color: black;
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 5px;
+    margin: 20px auto
   }
 
-  :global(li) {
+  /* :global(pre) {
     text-align: left;
     padding: 10px;
-  }
-
-  :global(h1) {
-    text-align: left;
-    padding: 10px;
-  }
-
-  :global(h2) {
-    text-align: left;
-    padding: 10px;
-  }
+  } */
 </style>
